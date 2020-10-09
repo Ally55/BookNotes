@@ -1,0 +1,87 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container-homepage {
+    background-image: url('../images/BOOK1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.centered-div {
+    background-color: rgba(255,255,255,0.3);
+    width: 50%;
+    max-width: 50%;
+}
+
+.auth-link {
+    display: revert;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 660px){
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .btn {
+        font-size: 10px;
+        width: 60px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .centered-div {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .centered-div {
+        max-width: 70%;
+        height: 60%;
+        padding: 5%;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 304px) {
+    .centered-div {
+        max-width: 85%;
+        padding: 6%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    h1 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .centered-div {
+        height: 70%;
+        padding: 10%;
+        max-width: 100%;
+    }
+}
