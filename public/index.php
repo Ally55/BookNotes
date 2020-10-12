@@ -3,7 +3,9 @@ require_once '../src/databases/database.php';
 
 $urlMap = [
     '/' => 'index.html',
-    '/signup' => 'signup.html'
+    '/signup' => 'signup.php',
+    '/login' => 'login.php',
+    '/library' => 'library.php'
 ];
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';

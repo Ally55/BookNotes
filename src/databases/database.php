@@ -23,10 +23,10 @@ function insertUser($dbConnection, $data) {
 
 /**
  * @param PDO $dbConnection
- * @return array|null
+ * @return array|false
  */
-function findUserByEmailOrUsername($dbConnection, $identifier) {
-    $query = "SELECT * FROM users WHERE email='{$identifier}' OR username= '{$identifier}'";
+function findUserByEmail($dbConnection, $email) {
+    $query = "SELECT * FROM users WHERE email='{$email}'";
     $statement = $dbConnection->prepare($query);
     $statement->execute();
 

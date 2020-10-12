@@ -93,6 +93,7 @@ body {
 .background-div {
     min-height: 100vh;
     background-color: #B0C4DE;
+    padding: 0;
 
 }
 
@@ -116,6 +117,16 @@ body {
 .signup-button {
     width: 100%;
     min-height: 8vh;
+}
+
+.error-message{
+    max-width: 33%;
+}
+
+.error-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* RESPONSIVE DESIGN for signup page */
