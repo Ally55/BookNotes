@@ -1,4 +1,5 @@
 <?php
+require_once '../src/databases/database.php';
 
 $urlMap = [
     '/' => 'index.html',
