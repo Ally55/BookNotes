@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/../validator.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = validateInput();

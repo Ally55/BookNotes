@@ -1,72 +1,21 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
-    $title = $_POST['title'];
 
-    if (empty($title)) {
-        $errors[] = 'The title field should not be empty.';
-    }
-    if (strlen($title) > 100) {
-        $errors = 'This title is too long. Please insert an available book title.';
-    }
-    if (!preg_match('/[a-zA-Z]/',$title)) {
-        $errors[] = 'The book title must contain letters.';
-    }
+    $data = [
+        'title' => $_POST['title'],
+        'author' => $_POST['author'],
+        'rate' => $_POST['rate'],
+        'cover_link' => $_POST['cover_link'],
+        'intro' => $_POST['intro'],
+        'body' => $_POST['body']
+    ];
 
-    $author = $_POST['author'];
-    if (empty($author)) {
-        $errors[] = 'The author field should not be empty.';
-    }
-    if (strlen($author) > 100) {
-        $errors[] = 'The name of the author is too long.';
-    }
-    if (!preg_match('/[a-zA-Z]/', $author)) {
-        $errors[] = 'The author field must only contain letters.';
-    }
-
-    $rate = $_POST['rate'];
-    if (empty($rate)) {
-        $errors[] = 'The rate field should not be empty.';
-    }
-    $rate = (int) $rate;
-    if ($rate === 0) {
-        $errors[] = 'The rate field should be grater than 0.';
-    }
-    if ($rate > 10) {
-        $errors[] = 'The book rate should be minimum 1 and maximum 10.';
-    }
-
-    $coverLink = $_POST['cover_link'];
-    if (empty($coverLink)) {
-        $errors[] = 'The cover link field should not be empty.';
-    }
-    if (strlen($coverLink) > 255) {
-        $errors[] = 'The cover link is too long.';
-    }
-
-    $intro = $_POST['intro'];
-    if (empty($intro)) {
-        $errors[] = "The note's intro should not be empty.";
-    }
-
-    $body = $_POST['body'];
-    if (empty($body)) {
-        $errors[] = "The note's body should not be empty.";
-    }
-
+    $errors = validateNotes($data);
     $idUser = $_SESSION['user']['id'];
 
     if (count($errors) === 0) {
-        $data = [
-            'id_user' => $idUser,
-            'title' => $title,
-            'author' => $author,
-            'rate' => $rate,
-            'cover_link' => $coverLink,
-            'intro' => $intro,
-            'body' => $body
-        ];
+        $data['id_user'] = $idUser;
         insertNotes($dbConnection, $data);
         header('Location: /library');
         exit();
