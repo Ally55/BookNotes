@@ -135,3 +135,7 @@ body {
         font-size: 35px;
     }
 }
+
+.register-alert {
+    width: 100%;
+}

@@ -1,18 +1,13 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
-    $email = $_POST['email'];
-    if (empty($email)) {
-        $errors[] = 'Email field is empty.';
-    }
-    if (strlen($email) > 255) {
-        $errors[] = 'Your email is too long.';
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Your email is not valid.';
-    }
+require __DIR__ . '/../validator.php';
+require __DIR__ . '/../flash_message.php';
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors = validateInput();
+
+    $email = $_POST['email'];
     $username = $_POST['username'];
     if(empty($username)) {
         $errors[] = 'Please enter a username.';
@@ -26,12 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
-    if(empty($password)) {
-        $errors[] = 'Please enter a password.';
-    }
-    if(strlen($password) < 6) {
-        $errors[] = 'Your password is too short.';
-    }
     $hashPassword = '';
     if($password === $confirmPassword) {
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -48,34 +37,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'password' => $hashPassword
         ];
         insertUser($dbConnection, $data);
+        if (isset($_POST['username'])) {
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['message'] = 'You have been successfully registered on our site! Enjoy!';
+        }
+        header('Location:/login');
+        exit;
     }
-
 }
-
-
-
 
 ?>
 
 <div class="container-fluid background-div p-0">
-    <header class="row no-gutters logo-section d-flex">
-        <div class="col">
-            <a href="../../public/index.php" class="logo">BookNotes</a>
-        </div>
 
-        <div class="col d-flex align-items-center justify-content-end">
-            <p class="m-0">Already a member?</p>
-            <br>
-            <a href="login" type="button" class="btn btn-primary ml-4 mr-4">Log in</a>
-        </div>
-    </header>
+    <?php include(__DIR__ . "/header.php"); ?>
 
     <div class="row no-gutters text-center mt-5">
         <div class="col">
             <h1 class="signup-title">Create a new account</h1>
         </div>
     </div>
-
 
     <?php if(!empty($errors)) { ?>
     <div class="row d-flex align-items-center justify-content-center ">
@@ -88,8 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     <?php } ?>
-
-
 
     <div class="row mt-3 no-gutters">
         <div class="col-4 mx-auto">

@@ -1,37 +1,20 @@
 <?php
-session_start();
-
+require __DIR__ . '/../validator.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
-    $email = $_POST['email'];
-    if (empty($email)) {
-        $errors[] = 'Email field is empty.';
-    }
-    if (strlen($email) > 255) {
-        $errors[] = 'Your email is too long.';
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Your email is not valid.';
-    }
+    $errors = validateInput();
 
     $password = $_POST['password'];
-    if(empty($password)) {
-        $errors[] = 'Please enter a password.';
-    }
-    if(strlen($password) < 6) {
-        $errors[] = 'Your password is too short.';
-    }
+    $email = $_POST['email'];
 
     if (count($errors) === 0) {
         $user = findUserByEmail($dbConnection, $email);
 
+
         if(!$user) {
             $errors[] = 'The account does not exist';
         } elseif (password_verify($password, $user['password'])) {
-            $_SESSION['authenticated_user'] = $_POST['email']; // remember the email of user who just logged in
-            header('Location: /library');
-            exit;
+            authenticateUser($user);
         } else {
             $errors[] = 'Your password is incorrect';
         }
@@ -43,23 +26,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="container-fluid background-div p-0">
-    <header class="row no-gutters logo-section d-flex">
-        <div class="col">
-            <a href="../../public/index.php" class="logo">BookNotes</a>
-        </div>
 
-        <div class="col d-flex align-items-center justify-content-end">
-            <p class="m-0">Not a member?</p>
-            <br>
-            <a href="signup" type="button" class="btn btn-primary ml-4 mr-4">SIGN UP</a>
+    <?php include(__DIR__ . "/header.php"); ?>
+
+    <div class="row no-gutters">
+        <div class="col">
+            <?php require_once __DIR__ . '/../flash_message.php'; ?>
         </div>
-    </header>
+    </div>
 
     <div class="row no-gutters text-center mt-5">
         <div class="col">
             <h1 class="login-title">Log in your account</h1>
         </div>
     </div>
+
+
+    <?php if(!empty($errors)) { ?>
+        <div class="row d-flex align-items-center justify-content-center ">
+            <div class="col alert alert-danger mt-4 error-message" role="alert">
+                <ul class="error-list">
+                    <?php foreach($errors as $error) { ?>
+                        <li> <?php echo htmlspecialchars($error, ENT_QUOTES);?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    <?php } ?>
 
     <div class="row mt-5 no-gutters">
         <div class="col-4 mx-auto">
