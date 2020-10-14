@@ -11,4 +11,5 @@ function authenticateUser($user) {
     ];
     header('Location: /library');
     exit;
+
 }

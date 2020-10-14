@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (count($errors) === 0) {
         $user = findUserByEmail($dbConnection, $email);
 
-
         if(!$user) {
             $errors[] = 'The account does not exist';
         } elseif (password_verify($password, $user['password'])) {
