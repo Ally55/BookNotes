@@ -33,4 +33,18 @@ function findUserByEmail($dbConnection, $email) {
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
+/**
+ * @param PDO $dbConnection
+ * @param array $data
+ */
+function insertNotes($dbConnection, $data) {
+    $date = date('Y-m-d H:i:s');
+    $query = "INSERT INTO notes (id_user, title, author, rate, cover_link, intro, body, created_at) 
+        VALUES ('{$data['id_user']}','{$data['title']}','{$data['author']}','{$data['rate']}', '{$data['cover_link']}','{$data['intro']}', '{$data['body']}', '$date')";
+
+
+    $statement = $dbConnection->prepare($query);
+    $statement->execute();
+}
+
 $dbConnection = connectToDb();
