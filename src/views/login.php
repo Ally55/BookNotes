@@ -1,5 +1,10 @@
 <?php
 
+if (isAuthenticated()) {
+    header('Location:/library');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = validateInput();
 
@@ -21,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 }
+
 ?>
 
 <div class="container-fluid background-div p-0">

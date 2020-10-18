@@ -5,30 +5,52 @@
 
     <div class="col d-flex align-items-center justify-content-end">
         <?php if (isAuthenticated()) { ?>
-            <a href="/create_notes" type="button" class="btn btn-light">NEW NOTE</a>
+            <a href="
+            <?php
+            if ($pathInfo === '/create_notes') {
+                echo '/library';
+            } else {
+                echo '/create_notes';
+            }?>" type="button" class="btn btn-light ml-4 mr-4">
+                <?php if ($pathInfo === '/create_notes') {
+                    echo 'ALL NOTES';
+                } else {
+                    echo 'NEW NOTE' ;
+                } ?> </a>
+            <a href="<?php if ($pathInfo === '/user_notes') {
+                echo '/library';
+            } else {
+                echo '/user_notes';
+            } ?>" type="button" class="btn btn-light"><?php if ($pathInfo === '/user_notes') {
+                echo 'ALL NOTES';
+            } else {
+                echo 'MY NOTES';
+            } ?> </a>
         <?php } ?>
 
         <p class="m-0">
             <?php
-            if ($pathInfo === '/login') {
+            if ($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
                 echo 'Not a member?';
-            } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes') {
+            } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes') {
                 echo '';
-            }else {
+            } else {
                 echo 'Already a member?';
-            }?>
+            }
+            ?>
         </p>
         <br>
-        <a href="<?php if($pathInfo === '/login') {
+        <a href="<?php if($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
             echo '/signup';
-        } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes') {
+        } elseif (isAuthenticated()) {  // ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes')
             echo '/logout';
         } else {
             echo '/login';
-        } ?>" type="button" class="btn btn-primary ml-4 mr-4">
-            <?php if($pathInfo === '/login') {
+        }
+        ?>" type="button" class="btn btn-primary ml-4 mr-4">
+            <?php if($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
                 echo 'SIGN UP';
-                } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes') {
+                } elseif (isAuthenticated()) {   // ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes')
                 echo 'LOG OUT';
                 } else {
                 echo 'LOG IN';

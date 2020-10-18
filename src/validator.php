@@ -76,6 +76,5 @@ function validateNotes($data) {
     if (empty($data['body'])) {
         $errors[] = "The note's body should not be empty.";
     }
-
     return $errors;
 }

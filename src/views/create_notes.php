@@ -1,5 +1,10 @@
 <?php
 
+if (!isAuthenticated()) {
+    header('Location:/library');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $data = [

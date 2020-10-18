@@ -1,8 +1,10 @@
 <?php
 
-require __DIR__ . '/../validator.php';
 require __DIR__ . '/../flash_message.php';
-
+if (isAuthenticated()) {
+    header('Location:/library');
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = validateInput();
