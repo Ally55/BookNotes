@@ -1,9 +1,9 @@
 <?php
+session_start();
+
 require_once '../src/databases/database.php';
 require_once '../src/auth.php';
 require  '../src/validator.php';
-
-session_start();
 
 $urlMap = [
     '/' => 'index.html',

@@ -17,6 +17,7 @@
                 } else {
                     echo 'NEW NOTE' ;
                 } ?> </a>
+
             <a href="<?php if ($pathInfo === '/user_notes') {
                 echo '/library';
             } else {

@@ -5,7 +5,12 @@
     if (isAuthenticated()) { ?>
             <div class="row mt-5 no-gutters">
                 <div class="col text-center">
-                    <h1><?php echo ucwords(htmlspecialchars($_SESSION['username'], ENT_QUOTES)); ?>'s notes</h1>
+                    <h1> <?php
+                        $email = $_SESSION['user']['email'];
+                        $user = findUserByEmail($dbConnection, $email);
+                        if (isset($user['username'])) {
+                            echo ucwords(htmlspecialchars($user['username'], ENT_QUOTES));
+                        }?>'s notes</h1>
                 </div>
             </div>
     <div class="row no-gutters text-center mt-5 book-container mx-auto">
