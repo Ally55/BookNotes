@@ -5,7 +5,7 @@
     if (isAuthenticated()) { ?>
             <div class="row mt-5 no-gutters">
                 <div class="col text-center">
-                    <h1> <?php
+                    <h1 class="user-tagline"> <?php
                         $email = $_SESSION['user']['email'];
                         $user = findUserByEmail($dbConnection, $email);
                         if (isset($user['username'])) {
@@ -13,7 +13,7 @@
                         }?>'s notes</h1>
                 </div>
             </div>
-    <div class="row no-gutters text-center mt-5 book-container mx-auto">
+    <div class="row no-gutters text-center mt-2 mt-md-5 book-container mx-auto">
     <?php $dataFromDB = getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']);
     if (empty($dataFromDB)) { ?>
             <div class="col">
@@ -25,9 +25,9 @@
             </div>
      <?php } ?>
         <?php foreach(getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']) as $note) { ?>
-            <div class="col card mb-5 card-notes">
+            <div class="col card mb-5 card-notes bg-light">
                 <div class="row no-gutters">
-                    <div class="col-md-3">
+                    <div class="col-md-3 img-container">
                         <img src="<?php echo htmlspecialchars($note['cover_link'], ENT_QUOTES); ?> " class="card-img d-inline-block">
                     </div>
                     <div class="col-md-9">

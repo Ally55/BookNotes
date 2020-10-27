@@ -16,8 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'body' => $_POST['body']
     ];
 
+
     $errors = validateNotes($data);
     $idUser = $_SESSION['user']['id'];
+
 
     if (count($errors) === 0) {
         $data['id_user'] = $idUser;
@@ -32,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php include(__DIR__ . "/header.php"); ?>
 
-    <div class="row text-center no-gutters mt-5">
+    <div class="row text-center no-gutters mt-4 mt-md-5">
         <div class="col">
-            <h1>Create new notes for your books!</h1>
+            <h1 class="create-tagline">Create new notes for your books!</h1>
         </div>
     </div>
 
@@ -50,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     <?php } ?>
 
-    <div class="row no-gutters mt-5">
-        <div class="col-4 mx-auto">
+    <div class="row no-gutters mt-3 mt-md-5">
+        <div class="col-10 col-md-7 col-lg-5 col-xl-4 mx-auto">
             <form method="post">
                 <div class="form-group">
                     <label for="title" class="label-form">Title</label>

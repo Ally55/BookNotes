@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php } ?>
 
     <div class="row mt-3 no-gutters">
-        <div class="col-4 mx-auto">
+        <div class="col-10 col-md-7 col-lg-5 col-xl-4 p-2 mx-auto">
             <form method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="label-form">Email address</label>

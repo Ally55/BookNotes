@@ -1,3 +1,8 @@
+.hidden-xs {
+    display: none;
+}
+
+
 body {
     height: 100%;
     width: 100%;
@@ -44,22 +49,117 @@ body {
 
 @media screen and (max-width: 430px){
     .centered-div {
-        max-width: 70%;
-        height: 60%;
+        max-width: 200px;
         padding: 5%;
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     p {
         font-size: 15px;
         margin: 0;
     }
+
+    /* create notes page responsive */
+    .buttons-container {
+        width: 250px;
+    }
+    .auth-button,
+    .notes-button {
+        height: 30px;
+        width: 110px;
+        padding: 7px;
+    }
+
+    .logo,
+    .create-tagline {
+        font-size: 30px;
+    }
+     /* library page responsive */
+    .book-container {
+        padding: 2rem 4rem!important;
+    }
+    .card-notes {
+        min-width: 200px!important;
+        height: auto !important;
+        margin-right: 0!important;
+    }
+    .img-container {
+        height: auto;
+        max-width: 150px;
+        margin: auto;
+    }
+
+    .card-img {
+        min-height: auto!important;
+        padding: 10px;
+        width: 150px;
+    }
+    .library-tagline {
+        padding: 10px;
+        font-size: 25px;
+    }
+
+
+    .login-title,
+    .user-tagline {
+        font-size: 30px;
+    }
 }
 
-@media screen and (max-width: 304px) {
+
+@media screen and (max-width: 780px) and (min-width: 500px) {
+    .card-notes {
+        margin-right: 0!important;
+    }
+
+    .book-container {
+        padding: 2rem 6rem!important;
+    }
+
+    .library-tagline {
+        padding: 20px;
+        font-size: 35px;
+    }
+
+    .auth-button,
+    .notes-button {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 1030px) and (min-width: 800px){
+    .book-container {
+        padding: 2rem 12rem!important;
+    }
+
+    .card-notes {
+        margin-right: 0!important;
+    }
+
+    .library-tagline {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .book-container {
+        padding: 2rem 20rem!important;
+    }
+    .centered-div {
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 2700px) and (min-width: 2000px){
+    .book-container {
+        padding: 2rem 40rem!important;
+    }
+}
+
+@media screen and (max-width: 375px){
     .centered-div {
         max-width: 85%;
         padding: 6%;
@@ -68,7 +168,56 @@ body {
     h1 {
         font-size: 20px;
     }
+
+
+    .login-title {
+        font-size: 30px;
+    }
+
+    /* responsive for user_notes and library pages */
+    .user-tagline {
+        font-size: 30px;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
+    .notes-button,
+    .auth-button {
+        width: 100px;
+        padding: 7px;
+    }
+
+    .background-div {
+        min-height: 150vh;
+    }
+    .book-container {
+        padding: 30px!important;
+        margin-top: 10px !important;
+    }
+    .img-container {
+        padding: 10px;
+    }
+    .card-notes {
+        min-width: 200px!important;
+        /*min-height: auto!important;*/
+        height: auto!important;
+        margin-right: 0 !important;
+    }
+    .card-img {
+        width: 140px;
+        min-height: 70px!important;
+    }
+    .library-tagline {
+        font-size: 28px;
+    }
+
+    /* responsive for create-notes */
+    .create-tagline {
+        font-size: 30px;
+    }
 }
+
 
 @media screen and (max-width: 250px) {
     h1 {
@@ -152,19 +301,12 @@ body {
     width: 120px;
 }
 
-.flex-fixed-width-item {
-    flex: 1 0 400px;
-}
-
-
 .card-notes:nth-child(odd) {
     margin-right: 80px;
 }
 
-
-
 .card-body {
-    padding: 25px;
+    padding: 20px;
 }
 
 .note-author,
@@ -185,4 +327,34 @@ body {
 
 .no-notes {
     text-decoration: none !important;
+}
+
+/* responsive for landscape */
+@media screen and (max-height: 375px) and (max-width: 700px) {
+    .book-container {
+        padding: 4rem!important;
+    }
+    .card-notes {
+        min-width: 250px!important;
+        height: auto;!important;
+        padding-top: 10px;
+    }
+
+    .card-img {
+        width: 130px;
+        height: 200px;
+        min-height: 50px;
+    }
+
+    .buttons-container {
+        width: 100px;
+    }
+
+    .logo-container {
+        max-width: 180px;
+    }
+    .notes-button,
+    .auth-button {
+        min-width: 70px;
+    }
 }

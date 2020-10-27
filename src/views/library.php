@@ -3,13 +3,13 @@
 
     <?php include(__DIR__ . "/header.php"); ?>
 
-    <h1 class="text-center mt-5 mb-4">All the notes from our users about the best books known!</h1>
-    <div class="row no-gutters text-center mt-5 book-container mx-auto">
+    <h1 class="text-center mt-5 mb-2 mb-md-4 library-tagline">All the notes from our users about the best books known!</h1>
+    <div class="row no-gutters text-center mt-2 mt-lg-5 book-container mx-auto">
     <?php foreach(getDataNotesFromDB($dbConnection) as $note) { ?>
 
         <div class="col card mb-5 card-notes bg-light">
             <div class="row no-gutters">
-                <div class="col-md-3">
+                <div class="col-md-3 img-container">
                     <img src="<?php echo htmlspecialchars($note['cover_link'], ENT_QUOTES); ?> " class="card-img d-inline-block">
                 </div>
                 <div class="col-md-9">

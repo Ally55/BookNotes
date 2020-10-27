@@ -1,9 +1,9 @@
 <header class="row no-gutters logo-section d-flex">
-    <div class="col">
+    <div class="col logo-container mb-1 mb-sm-0">
         <a href="/" class="logo">BookNotes</a>
     </div>
 
-    <div class="col d-flex align-items-center justify-content-end">
+    <div class="col buttons-container d-flex align-items-center justify-content-center justify-content-md-end mb-0 mb-md-2">
         <?php if (isAuthenticated()) { ?>
             <a href="
             <?php
@@ -11,7 +11,7 @@
                 echo '/library';
             } else {
                 echo '/create_notes';
-            }?>" type="button" class="btn btn-light ml-4 mr-4">
+            }?>" type="button" class="btn btn-light ml-2 ml-md-4 mr-2 mr-md-4 notes-button">
                 <?php if ($pathInfo === '/create_notes') {
                     echo 'ALL NOTES';
                 } else {
@@ -22,14 +22,14 @@
                 echo '/library';
             } else {
                 echo '/user_notes';
-            } ?>" type="button" class="btn btn-light"><?php if ($pathInfo === '/user_notes') {
+            } ?>" type="button" class="btn btn-light notes-button"><?php if ($pathInfo === '/user_notes') {
                 echo 'ALL NOTES';
             } else {
                 echo 'MY NOTES';
             } ?> </a>
         <?php } ?>
 
-        <p class="m-0">
+        <p class="m-0 d-none d-sm-block">
             <?php
             if ($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
                 echo 'Not a member?';
@@ -48,7 +48,7 @@
         } else {
             echo '/login';
         }
-        ?>" type="button" class="btn btn-primary ml-4 mr-4">
+        ?>" type="button" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">
             <?php if($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
                 echo 'SIGN UP';
                 } elseif (isAuthenticated()) {   // ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes')
