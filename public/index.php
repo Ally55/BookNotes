@@ -12,7 +12,8 @@ $urlMap = [
     '/logout' => 'logout.php',
     '/library' => 'library.php',
     '/create_notes' => 'create_notes.php',
-    '/user_notes' => 'user_notes.php'
+    '/user_notes' => 'user_notes.php',
+    '/note' => 'note.php'
 ];
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';

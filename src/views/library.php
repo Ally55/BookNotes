@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="card-body bg-light" >
-                        <h2 class="card-title mb-1"> <?php echo htmlspecialchars($note['title'], ENT_QUOTES); ?> </h2>
+                        <a href="/note?id=<?php echo htmlspecialchars($note['id'], ENT_QUOTES); ?>" class="card-title-tag" <h2 class="card-title mb-1"> <?php echo htmlspecialchars($note['title'], ENT_QUOTES); ?> </h2></a>
                         <div class="d-flex align-items-center justify-content-around text-center mb-4">
                             <span class="text-muted note-author"><?php echo htmlspecialchars($note['author'], ENT_QUOTES); ?></span>
                             <span class="text-muted note-rate">Rate: <?php echo htmlspecialchars($note['rate'], ENT_QUOTES); ?>/10</span>

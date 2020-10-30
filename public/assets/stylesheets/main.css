@@ -27,6 +27,64 @@ body {
     display: revert;
 }
 
+.card-title-tag {
+    font-size: 30px;
+    text-decoration: none!important;
+    color: black;
+}
+
+.card-title-tag:hover {
+    color: grey;
+}
+
+.cover-link {
+    width: 170px;
+}
+
+.note-title {
+    width: 800px;
+    height: 60px;
+    font-size: 45px;
+}
+
+.cover-container {
+    max-width: 300px;
+}
+
+.note-info {
+    font-size: 20px;
+}
+
+.intro-container,
+.body-container,
+.created-at {
+    width: 1000px;
+    padding-left: 7rem;
+}
+
+.note-container {
+    padding: 100px;
+}
+
+.info-card {
+    border-radius: 10px;
+}
+
+.library-tagline,
+.card-text,
+.card-title-tag,
+.user-tagline,
+.note-title,
+.note-info,
+.intro-title,
+.body-title,
+.intro-note,
+.body-note {
+    font-family: "Source Sans Pro";
+}
+
+
+
 /* RESPONSIVE DESIGN for homepage */
 
 @media screen and (max-width: 660px){
@@ -47,7 +105,7 @@ body {
     }
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 450px){
     .centered-div {
         max-width: 200px;
         padding: 5%;
@@ -107,6 +165,26 @@ body {
     .user-tagline {
         font-size: 30px;
     }
+
+    /* Note page */
+    .note-container {
+        padding: 70px;
+    }
+    .info-card {
+        max-width: 300px;
+    }
+    .cover-container {
+        max-width: 190px;
+    }
+    .note-title {
+        max-width: 200px;
+        margin-bottom: 60px;
+        font-size: 30px;
+    }
+    .intro-container,
+    .body-container {
+        padding-left: 0;
+    }
 }
 
 
@@ -128,6 +206,26 @@ body {
     .notes-button {
         width: 130px;
     }
+
+    /* Note page */
+    .info-card {
+        max-width: 600px;
+    }
+    .note-container{
+        padding: 80px;
+    }
+    .tagline-container {
+        max-width: 300px;
+    }
+    .note-title {
+        font-size: 30px;
+    }
+    .intro-container,
+    .body-container,
+    .created-at{
+        padding-left: 1rem;
+    }
+
 }
 
 @media screen and (max-width: 1030px) and (min-width: 800px){
@@ -141,6 +239,18 @@ body {
 
     .library-tagline {
         padding: 20px;
+    }
+
+    /* Note page */
+    .info-card {
+        max-width: 825px;
+    }
+    .tagline-container {
+        max-width: 500px;
+    }
+    .intro-container,
+    .body-container {
+        padding-left: 2rem;
     }
 }
 

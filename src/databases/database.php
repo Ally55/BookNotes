@@ -54,6 +54,14 @@ function getDataNotesFromDB($dbConnection) {
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getDataNotesById($dbConnection, $id) {
+    $query = "SELECT * FROM notes WHERE id={$id}";
+    $statement = $dbConnection->prepare($query);
+    $statement->execute();
+
+    return $statement->fetch(PDO::FETCH_ASSOC);
+}
+
 function getUserDataNotesFromDB($dbConnection, $idUser) {
     $query = "SELECT * FROM notes WHERE id_user={$idUser}";
     $statement = $dbConnection->prepare($query);

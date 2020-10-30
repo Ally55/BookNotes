@@ -33,7 +33,7 @@
             <?php
             if ($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
                 echo 'Not a member?';
-            } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes') {
+            } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes' || $pathInfo === '/note') {
                 echo '';
             } else {
                 echo 'Already a member?';
