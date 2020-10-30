@@ -1,0 +1,9 @@
+{
+    "name": "ally/book-notes",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BookNotes\\": "src/"
+        }
+    }
+}
