@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (count($errors) === 0) {
         $data['id_user'] = $idUser;
-        insertNotes($dbConnection, $data);
+//        insertNotes($dbConnection, $data);
+        $query->insertNotes($data);
         header('Location: /library');
         exit();
     }

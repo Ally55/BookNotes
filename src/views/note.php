@@ -4,7 +4,8 @@
     <div class="row no-gutters note-container">
         <div class="row no-gutters p-5 bg-light info-card">
             <?php $noteId = (int)$_GET['id'];
-            $note = getDataNotesById($dbConnection, $noteId); ?>
+//            $note = getDataNotesById($dbConnection, $noteId);
+                $note = $query->getDataNoteById($noteId); ?>
 
             <div class="col d-flex justify-content-end cover-container">
                 <img src="<?php echo htmlspecialchars($note['cover_link'], ENT_QUOTES); ?>" class="cover-link">

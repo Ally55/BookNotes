@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
 
     if (count($errors) === 0) {
-        $user = findUserByEmail($dbConnection, $email);
+//        $user = findUserByEmail($dbConnection, $email);
+        $user = $query->findUserByEmail($email);
 
         if(!$user) {
             $errors[] = 'The account does not exist';

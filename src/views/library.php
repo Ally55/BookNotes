@@ -5,7 +5,7 @@
 
     <h1 class="text-center mt-5 mb-2 mb-md-4 library-tagline">All the notes from our users about the best books known!</h1>
     <div class="row no-gutters text-center mt-2 mt-lg-5 book-container mx-auto">
-    <?php foreach(getDataNotesFromDB($dbConnection) as $note) { ?>
+    <?php foreach($query->getDataNotesFromDB() as $note) { ?>
 
         <div class="col card mb-5 card-notes bg-light">
             <div class="row no-gutters">

@@ -6,6 +6,11 @@ require_once '../src/databases/database.php';
 require_once '../src/auth.php';
 require  '../src/validator.php';
 
+$config = require_once '../config/config.php';
+
+$connectionToDb = new \BookNotes\Database\Connection($config);
+$query = new \BookNotes\Database\QueryBuilder($connectionToDb->pdo);
+
 $urlMap = [
     '/' => 'index.html',
     '/signup' => 'signup.php',

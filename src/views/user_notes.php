@@ -7,14 +7,17 @@
                 <div class="col text-center">
                     <h1 class="user-tagline"> <?php
                         $email = $_SESSION['user']['email'];
-                        $user = findUserByEmail($dbConnection, $email);
+//                        $user = findUserByEmail($dbConnection, $email);
+                        $user = $query->findUserByEmail($email);
                         if (isset($user['username'])) {
                             echo ucwords(htmlspecialchars($user['username'], ENT_QUOTES));
                         }?>'s notes</h1>
                 </div>
             </div>
+
     <div class="row no-gutters text-center mt-2 mt-md-5 book-container mx-auto">
-    <?php $dataFromDB = getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']);
+<!--    --><?php //$dataFromDB = getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']);
+        $dataFromDB = $query->getUserDataNotesFromDB($_SESSION['user']['id']);
     if (empty($dataFromDB)) { ?>
             <div class="col">
                 <h2 class="no-notes">
@@ -24,7 +27,8 @@
                 </h2>
             </div>
      <?php } ?>
-        <?php foreach(getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']) as $note) { ?>
+<!--        --><?php //foreach(getUserDataNotesFromDB($dbConnection, $_SESSION['user']['id']) as $note) {
+        foreach($dataFromDB as $note) { ?>
             <div class="col card mb-5 card-notes bg-light">
                 <div class="row no-gutters">
                     <div class="col-md-3 img-container">

@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'The passwords do not match.';
     }
 
-    if (findUserByEmail($dbConnection, $email)) {
+    if ($query->findUserByEmail($email)) {
         $errors[] = 'This email is already registered.';
     } elseif (count($errors) === 0) {
         $data = [
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email,
             'password' => $hashPassword
         ];
-        insertUser($dbConnection, $data);
+        $query->insertUser($data);
         if (isset($_POST['username'])) {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['message'] = 'You have been successfully registered on our site! Enjoy!';

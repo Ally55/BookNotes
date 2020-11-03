@@ -1,9 +1,11 @@
 {
     "name": "ally/book-notes",
-    "require": {},
+    "require": {
+        "ext-pdo": "*"
+    },
     "autoload": {
-        "psr-4": {
-            "BookNotes\\": "src/"
-        }
+        "classmap": [
+            "./"
+        ]
     }
 }
