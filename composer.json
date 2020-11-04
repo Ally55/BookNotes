@@ -4,8 +4,8 @@
         "ext-pdo": "*"
     },
     "autoload": {
-        "classmap": [
-            "./"
-        ]
+        "psr-4": {
+            "BookNotes\\": "app/"
+        }
     }
 }

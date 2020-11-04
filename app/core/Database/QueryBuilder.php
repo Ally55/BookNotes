@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BookNotes\Database;
+namespace BookNotes\Core\Database;
 
 
 class QueryBuilder

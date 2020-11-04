@@ -1,8 +1,6 @@
 <?php
 
-namespace BookNotes\Database;
-
-
+namespace BookNotes\Core\Database;
 
 class Connection
 {
