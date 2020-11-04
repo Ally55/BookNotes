@@ -7,11 +7,12 @@ require_once '../src/auth.php';
 require '../src/validator.php';
 
 use BookNotes\Core\Router;
+use BookNotes\Core\Container;
 
 
-$config = require_once '../config/config.php';
-$connectionToDb = new \BookNotes\Core\Database\Connection($config);
-$query = new \BookNotes\Core\Database\QueryBuilder($connectionToDb->pdo);
+Container::bind('config', require '../config/config.php');
+Container::bind('connection', new \BookNotes\Core\Database\Connection(Container::get('config')));
+Container::bind('query', new \BookNotes\Core\Database\QueryBuilder(Container::get('connection')->pdo));
 
 
 $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
