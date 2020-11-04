@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="row no-gutters">
         <div class="col">
-            <?php require_once __DIR__ . '/../flash_message.php'; ?>
+            <?php require_once __DIR__ . '/../../src/flash_message.php'; ?>
         </div>
     </div>
 

@@ -13,7 +13,10 @@
 </head>
 <body>
 
-<?php include(__DIR__ . "/{$urlMap[$pathInfo]}"); ?>
+<?php
+include dirname(__DIR__) . "/views/{$nameOfFile}.php"
+
+?>
 
 </body>
 </html>

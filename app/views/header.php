@@ -2,7 +2,7 @@
     <div class="col logo-container mb-1 mb-sm-0">
         <a href="/" class="logo">BookNotes</a>
     </div>
-
+<?php $pathInfo = $_SERVER['PATH_INFO']; ?>
     <div class="col buttons-container d-flex align-items-center justify-content-center justify-content-md-end mb-0 mb-md-2">
         <?php if (isAuthenticated()) { ?>
             <a href="
