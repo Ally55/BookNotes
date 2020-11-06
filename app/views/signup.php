@@ -54,16 +54,17 @@ if (isAuthenticated()) {
 
     <?php include(__DIR__ . "/header.php"); ?>
 
+
     <div class="row no-gutters text-center mt-5">
         <div class="col">
             <h1 class="signup-title">Create a new account</h1>
         </div>
     </div>
 
-    <?php if(!empty($errors)) { ?>
-    <div class="row d-flex align-items-center justify-content-center ">
+<?php if(!empty($errors)) { ?>
+    <div class="row d-flex align-items-center justify-content-center no-gutters">
         <div class="col alert alert-danger mt-4 error-message" role="alert">
-            <ul class="error-list">
+            <ul class="error-list pl-3">
                 <?php foreach($errors as $error) { ?>
                 <li> <?php echo htmlspecialchars($error, ENT_QUOTES);?></li>
                 <?php } ?>

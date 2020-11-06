@@ -468,3 +468,32 @@ body {
         min-width: 70px;
     }
 }
+
+.error-container {
+    height: 100vh;
+    padding: 150px;
+    background-color: #B0C4DE;
+}
+
+.error404 {
+    max-width: 400px;
+    height: 100px;
+}
+
+.error-404-message {
+    height: fit-content;
+    font-family: "Quicksand";
+}
+
+.error-404-advice{
+    height: fit-content;
+    font-family: "Quicksand";
+    max-width: 400px;
+}
+
+.error-button {
+    height: 50px;
+    width: 100px;
+    margin-left: 150px;
+}
+

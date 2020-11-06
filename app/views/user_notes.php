@@ -8,6 +8,7 @@
                     <h1 class="user-tagline"> <?php
                         $email = $_SESSION['user']['email'];
 //                        $user = findUserByEmail($dbConnection, $email);
+                        $query = \BookNotes\Core\Container::get('query');
                         $user = $query->findUserByEmail($email);
                         if (isset($user['username'])) {
                             echo ucwords(htmlspecialchars($user['username'], ENT_QUOTES));
@@ -52,8 +53,5 @@
         <?php } ?>
     </div>
 
-    <?php } else {
-        header('Location: /login');
-        exit;
-    } ?>
+    <?php } ?>
 </div>

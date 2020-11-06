@@ -41,22 +41,28 @@
             ?>
         </p>
         <br>
-        <a href="<?php if($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
+        <?php if (isAuthenticated()) { ?>
+            <form action="logout" method="post">
+                <button type="submit" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">LOG OUT</button>
+            </form>
+        <?php } ?>
+
+        <?php if (!isAuthenticated()) { ?>
+        <a href="<?php if($pathInfo === '/login' || $pathInfo === '/library') {
             echo '/signup';
-        } elseif (isAuthenticated()) {  // ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes')
-            echo '/logout';
         } else {
             echo '/login';
         }
         ?>" type="button" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">
-            <?php if($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
-                echo 'SIGN UP';
-                } elseif (isAuthenticated()) {   // ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes')
-                echo 'LOG OUT';
+            <?php if($pathInfo === '/login' || $pathInfo === '/library') {
+                    echo 'SIGN UP';
                 } else {
-                echo 'LOG IN';
+                    echo 'LOG IN';
                 }
             ?>
         </a>
+        <?php } ?>
+
+
     </div>
 </header>

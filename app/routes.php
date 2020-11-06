@@ -7,14 +7,14 @@ $router->post('signup', 'SignupController@create');
 
 $router->get('login', 'LoginController@index');
 $router->post('login', 'LoginController@login');
-
-$router->post('logout', 'LogoutController@index');
+$router->post('logout', 'LoginController@logout');
 
 $router->get('library', 'LibraryController@listAll');
 
 $router->get('create_notes', 'LibraryController@createNotes');
-$router->post('create-notes', 'LibraryController@create');
+$router->post('create_notes', 'LibraryController@create');
 
 $router->get('user_notes', 'LibraryController@userNotes');
 
 $router->get('note', 'LibraryController@read');
+

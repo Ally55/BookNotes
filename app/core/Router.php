@@ -28,6 +28,8 @@ class Router
         if (array_key_exists($uri, $this->routes[$requestedMethod])) {
             return $this->action(...explode('@', $this->routes[$requestedMethod][$uri]));
         }
+
+        return $this->action('ErrorsController', 'notFound');
     }
 
     protected function action($controller, $action) {

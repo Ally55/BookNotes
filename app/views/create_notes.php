@@ -1,34 +1,9 @@
 <?php
 
-if (!isAuthenticated()) {
-    header('Location:/library');
-    exit;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $data = [
-        'title' => $_POST['title'],
-        'author' => $_POST['author'],
-        'rate' => $_POST['rate'],
-        'cover_link' => $_POST['cover_link'],
-        'intro' => $_POST['intro'],
-        'body' => $_POST['body']
-    ];
-
-
-    $errors = validateNotes($data);
-    $idUser = $_SESSION['user']['id'];
-
-
-    if (count($errors) === 0) {
-        $data['id_user'] = $idUser;
-//        insertNotes($dbConnection, $data);
-        $query->insertNotes($data);
-        header('Location: /library');
-        exit();
-    }
-}
+//if (!isAuthenticated()) {
+//    header('Location:/library');
+//    exit;
+//}
 ?>
 
 <div class="container-fluid background-div">

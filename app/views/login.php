@@ -1,32 +1,9 @@
 <?php
 
-if (isAuthenticated()) {
-    header('Location:/library');
-    exit;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = validateInput();
-
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-
-    if (count($errors) === 0) {
-//        $user = findUserByEmail($dbConnection, $email);
-        $user = $query->findUserByEmail($email);
-
-        if(!$user) {
-            $errors[] = 'The account does not exist';
-        } elseif (password_verify($password, $user['password'])) {
-            authenticateUser($user);
-        } else {
-            $errors[] = 'Your password is incorrect';
-        }
-    } else {
-        $_SESSION['message'] = 'Login failed';
-    }
-
-}
+//if (isAuthenticated()) {
+//    header('Location:/library');
+//    exit;
+//}
 
 ?>
 
@@ -48,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <?php if(!empty($errors)) { ?>
-        <div class="row d-flex align-items-center justify-content-center ">
-            <div class="col alert alert-danger mt-4 error-message" role="alert">
+        <div class="row d-flex align-items-center justify-content-center no-gutters ">
+            <div class="col alert alert-danger mt-4 error-message pl-3" role="alert">
                 <ul class="error-list">
                     <?php foreach($errors as $error) { ?>
                         <li> <?php echo htmlspecialchars($error, ENT_QUOTES);?></li>

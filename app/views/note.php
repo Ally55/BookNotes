@@ -5,6 +5,7 @@
         <div class="row no-gutters p-5 bg-light info-card">
             <?php $noteId = (int)$_GET['id'];
 //            $note = getDataNotesById($dbConnection, $noteId);
+            $query = \BookNotes\Core\Container::get('query');
                 $note = $query->getDataNoteById($noteId); ?>
 
             <div class="col d-flex justify-content-end cover-container">
