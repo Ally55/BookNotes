@@ -2,7 +2,7 @@
     <?php include(__DIR__ . '/header.php'); ?>
 
     <div class="row no-gutters note-container">
-        <div class="row no-gutters p-5 bg-light info-card">
+        <div class="row no-gutters bg-light info-card">
             <?php $noteId = (int)$_GET['id'];
 //            $note = getDataNotesById($dbConnection, $noteId);
             $query = \BookNotes\Core\Container::get('query');
@@ -13,25 +13,24 @@
             </div>
 
             <div class="col d-flex justify-content-start ml-3 flex-column tagline-container">
-                <h1 class="note-title"> <?php echo htmlspecialchars($note['title'], ENT_QUOTES); ?> </h1>
+                <h1 class="note-title text-center text-md-left mt-5 mt-md-0"> <?php echo htmlspecialchars($note['title'], ENT_QUOTES); ?> </h1>
 
                 <span class="note-info"><?php echo htmlspecialchars($note['author'], ENT_QUOTES); ?> </span>
                 <span class="note-info"><?php echo htmlspecialchars($note['rate'], ENT_QUOTES); ?> /10</span>
             </div>
 
-            <div class="intro-container mt-5">
+            <div class="intro-container mt-5 p-3">
                 <h1 class="intro-title">Note's intro</h1>
                 <p class="intro-note"><?php echo htmlspecialchars($note['intro'], ENT_QUOTES); ?> </p>
             </div>
 
-            <div class="body-container mt-5">
+            <div class="body-container mt-5 p-3">
                 <h1 class="body-title">Note's body</h1>
-                <p class="body-note"><?php echo nl2br(htmlspecialchars($note['body'], ENT_QUOTES)); ?> </p>
+                <p class="body-note mb-5"><?php echo nl2br(htmlspecialchars($note['body'], ENT_QUOTES)); ?> </p>
+                <small class>Created at <?php echo htmlspecialchars($note['created_at'], ENT_QUOTES); ?></small>
             </div>
 
-            <div class="created-at mt-5">
-                <small>Created at <?php echo htmlspecialchars($note['created_at'], ENT_QUOTES); ?></small>
-            </div>
+
         </div>
     </div>
 </div>

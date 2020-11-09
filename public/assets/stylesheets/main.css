@@ -42,13 +42,12 @@ body {
 }
 
 .note-title {
-    width: 800px;
     height: 60px;
     font-size: 45px;
 }
 
 .cover-container {
-    max-width: 300px;
+    max-width: 20%;
 }
 
 .note-info {
@@ -56,8 +55,7 @@ body {
 }
 
 .intro-container,
-.body-container,
-.created-at {
+.body-container {
     width: 1000px;
     padding-left: 7rem;
 }
@@ -68,6 +66,7 @@ body {
 
 .info-card {
     border-radius: 10px;
+    padding: 100px;
 }
 
 .library-tagline,
@@ -83,7 +82,19 @@ body {
     font-family: "Source Sans Pro";
 }
 
+.card-text {
+    height: 140px;
+    overflow-y: auto;
+}
 
+.intro-note,
+.body-note {
+    font-size: 20px;
+}
+
+.card-note-child {
+    height: 100%;
+}
 
 /* RESPONSIVE DESIGN for homepage */
 
@@ -168,22 +179,37 @@ body {
 
     /* Note page */
     .note-container {
-        padding: 70px;
+        padding: 60px;
     }
     .info-card {
         max-width: 300px;
+        padding: 20px;
     }
     .cover-container {
-        max-width: 190px;
+        max-width: 220px;
     }
     .note-title {
-        max-width: 200px;
-        margin-bottom: 60px;
+        max-width: 80%;
         font-size: 30px;
     }
     .intro-container,
     .body-container {
         padding-left: 0;
+    }
+
+    /* error page */
+    .error-child-container {
+        padding: 30px;
+    }
+
+    .error-button {
+        width: 80px!important;
+        height: 35px!important;
+        margin-left: 0!important;
+    }
+
+    .error-404-advice {
+        font-size: 15px;
     }
 }
 
@@ -210,6 +236,7 @@ body {
     /* Note page */
     .info-card {
         max-width: 600px;
+        padding: 70px;
     }
     .note-container{
         padding: 80px;
@@ -221,11 +248,12 @@ body {
         font-size: 30px;
     }
     .intro-container,
-    .body-container,
-    .created-at{
+    .body-container{
         padding-left: 1rem;
     }
-
+    .cover-container {
+        max-width: 40%;
+    }
 }
 
 @media screen and (max-width: 1030px) and (min-width: 800px){
@@ -243,7 +271,8 @@ body {
 
     /* Note page */
     .info-card {
-        max-width: 825px;
+        max-width: 100%;
+        padding: 60px;
     }
     .tagline-container {
         max-width: 500px;
@@ -251,6 +280,10 @@ body {
     .intro-container,
     .body-container {
         padding-left: 2rem;
+    }
+
+    .cover-container {
+        max-width: 30%;
     }
 }
 
@@ -269,7 +302,7 @@ body {
     }
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 385px){
     .centered-div {
         max-width: 85%;
         padding: 6%;
@@ -326,8 +359,34 @@ body {
     .create-tagline {
         font-size: 30px;
     }
+
+    /* error page */
+    .error-container {
+        padding: 40px!important;
+    }
+
+    .error-child-container {
+        padding: 0;
+    }
+
+    .note-container {
+        padding: 35px;
+    }
 }
 
+@media screen and (max-width: 330px){
+    .info-card {
+        max-width: 100%;
+    }
+
+    .logo-section {
+        height: 100px;
+    }
+
+    .cover-container {
+        max-width: 200px!important;
+    }
+}
 
 @media screen and (max-width: 250px) {
     h1 {
@@ -363,7 +422,7 @@ body {
 
 .logo {
     font-size: 35px;
-    margin-left: 3%;
+    margin-left: 10px;
     color: black;
     text-decoration: none !important;
     font-family: Piazolla;
@@ -426,14 +485,24 @@ body {
 }
 
 .card-img {
-    min-height: 270px;
+    height: 100%;
 }
 
 .card-notes {
     min-width: 500px;
     max-width: 600px;
-    height: 270px;
+    /*height: 270px;*/
+   /*height: fit-content;*/
+
 }
+
+.card-title-tag {
+    font-size: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 250px;
+}
+
 
 .no-notes {
     text-decoration: none !important;
@@ -456,9 +525,9 @@ body {
         min-height: 50px;
     }
 
-    .buttons-container {
-        width: 100px;
-    }
+    /*.buttons-container {*/
+    /*    width: 100px;*/
+    /*}*/
 
     .logo-container {
         max-width: 180px;

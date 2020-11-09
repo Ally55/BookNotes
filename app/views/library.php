@@ -9,7 +9,7 @@
     foreach($query->getDataNotesFromDB() as $note) { ?>
 
         <div class="col card mb-5 card-notes bg-light">
-            <div class="row no-gutters">
+            <div class="row no-gutters ">
                 <div class="col-md-3 img-container">
                     <img src="<?php echo htmlspecialchars($note['cover_link'], ENT_QUOTES); ?> " class="card-img d-inline-block">
                 </div>
