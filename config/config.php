@@ -2,9 +2,9 @@
 
 return [
     'db' => [
-        'user' => 'root',
-        'password' => '123',
-        'host' => 'localhost',
-        'dbname' => 'BookNotes'
+        'user' => getenv('MYSQL_USER'),
+        'password' => getenv('MYSQL_PASSWORD'),
+        'host' => getenv('MYSQL_HOST'),
+        'dbname' => getenv('MYSQL_DB')
     ]
 ];
