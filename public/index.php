@@ -10,11 +10,10 @@ require '../app/validator.php';
 use BookNotes\Core\Router;
 use BookNotes\Core\Container;
 
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-
+if (file_exists(dirname(__DIR__) . '/.env')) {
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
+    $dotenv->load();
+}
 
 Container::bind('config', require '../config/config.php');
 Container::bind('connection', new \BookNotes\Core\Database\Connection(Container::get('config')));
