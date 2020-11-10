@@ -4,7 +4,6 @@
     <div class="row no-gutters note-container">
         <div class="row no-gutters bg-light info-card">
             <?php $noteId = (int)$_GET['id'];
-//            $note = getDataNotesById($dbConnection, $noteId);
             $query = \BookNotes\Core\Container::get('query');
                 $note = $query->getDataNoteById($noteId); ?>
 
@@ -29,8 +28,6 @@
                 <p class="body-note mb-5"><?php echo nl2br(htmlspecialchars($note['body'], ENT_QUOTES)); ?> </p>
                 <small class>Created at <?php echo htmlspecialchars($note['created_at'], ENT_QUOTES); ?></small>
             </div>
-
-
         </div>
     </div>
 </div>
