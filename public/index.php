@@ -3,8 +3,8 @@ session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once '../src/auth.php';
-require '../src/validator.php';
+require '../app/auth.php';
+require '../app/validator.php';
 
 use BookNotes\Core\Router;
 use BookNotes\Core\Container;

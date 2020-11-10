@@ -1,6 +1,7 @@
 <?php
 
-require __DIR__ . '/../../src/flash_message.php';
+require __DIR__ . '/../flash_message.php';
+
 if (isAuthenticated()) {
     header('Location:/library');
     exit;
