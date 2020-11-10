@@ -11,7 +11,7 @@
                 echo '/library';
             } else {
                 echo '/create_notes';
-            }?>" type="button" class="btn btn-light ml-2 ml-md-4 mr-2 mr-md-4 notes-button">
+            }?>" class="btn btn-light ml-2 ml-md-4 mr-2 mr-md-4 notes-button">
                 <?php if ($pathInfo === '/create_notes') {
                     echo 'ALL NOTES';
                 } else {
@@ -22,7 +22,7 @@
                 echo '/library';
             } else {
                 echo '/user_notes';
-            } ?>" type="button" class="btn btn-light notes-button"><?php if ($pathInfo === '/user_notes') {
+            } ?>" class="btn btn-light notes-button"><?php if ($pathInfo === '/user_notes') {
                 echo 'ALL NOTES';
             } else {
                 echo 'MY NOTES';
@@ -53,7 +53,7 @@
         } else {
             echo '/login';
         }
-        ?>" type="button" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">
+        ?>" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">
             <?php if($pathInfo === '/login' || $pathInfo === '/library') {
                     echo 'SIGN UP';
                 } else {

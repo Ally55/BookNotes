@@ -4,9 +4,9 @@
         <p>Register to start your journey!</p>
 
         <div class="row d-inline-flex mt-3 mb-3 justify-content-center align-items-center">
-            <a href="/signup" type="button" class="btn btn-warning mr-2">Sign Up</a>
+            <a href="/signup" class="btn btn-warning mr-2">Sign Up</a>
             <br>
-            <a href="/library" type="button" class="btn btn-info ">Search</a>
+            <a href="/library" class="btn btn-info ">Search</a>
         </div>
 
         <div class="row mt-4 mb-2 auth-link">
