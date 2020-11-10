@@ -11,7 +11,7 @@ use BookNotes\Core\Router;
 use BookNotes\Core\Container;
 
 
-$dotenv = Dotenv\Dotenv::createImmutable( '../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 
