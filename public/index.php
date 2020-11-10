@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -8,6 +9,11 @@ require '../app/validator.php';
 
 use BookNotes\Core\Router;
 use BookNotes\Core\Container;
+
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
 
 
 Container::bind('config', require '../config/config.php');
