@@ -3,7 +3,7 @@
     <?php include(__DIR__ . "/header.php"); ?>
 
     <h1 class="text-center mt-5 mb-2 mb-md-4 library-tagline">All the notes from our users about the best books known!</h1>
-    <div class="row no-gutters text-center mt-2 mt-lg-5 book-container mx-auto d-flex justify-content-center align-items-center">
+    <div class="row no-gutters text-center mt-2 mt-lg-5 book-container mx-auto d-flex justify-content-between align-items-center">
     <?php $query = \BookNotes\Core\Container::get('query');
     foreach($query->getDataNotesFromDB() as $note) { ?>
 
