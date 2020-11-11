@@ -39,6 +39,7 @@ body {
 
 .cover-link {
     width: 170px;
+    height: 250px;
 }
 
 .note-title {
@@ -47,7 +48,7 @@ body {
 }
 
 .cover-container {
-    max-width: 20%;
+    max-width: 190px;
 }
 
 .note-info {
@@ -287,7 +288,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1800px) and (max-width: 2000px) {
     .book-container {
         padding: 2rem 20rem!important;
     }
@@ -384,7 +385,7 @@ body {
     }
 
     .cover-container {
-        max-width: 200px!important;
+        max-width: 190px!important;
     }
 }
 

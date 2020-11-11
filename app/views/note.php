@@ -14,7 +14,7 @@
             <div class="col d-flex justify-content-start ml-3 flex-column tagline-container">
                 <h1 class="note-title text-center text-md-left mt-5 mt-md-0"> <?php echo htmlspecialchars($note['title'], ENT_QUOTES); ?> </h1>
 
-                <span class="note-info"><?php echo htmlspecialchars($note['author'], ENT_QUOTES); ?> </span>
+                <span class="note-info mt-5 mt-md-0"><?php echo htmlspecialchars($note['author'], ENT_QUOTES); ?> </span>
                 <span class="note-info"><?php echo htmlspecialchars($note['rate'], ENT_QUOTES); ?> /10</span>
             </div>
 
