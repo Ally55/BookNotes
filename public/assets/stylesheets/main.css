@@ -189,9 +189,10 @@ body {
         max-width: 300px;
         padding: 20px;
     }
-    /*.cover-container {*/
-    /*    max-width: 220px;*/
-    /*}*/
+
+    .cover-link {
+        height: 250px;
+    }
     .note-title {
         max-width: 80%;
         font-size: 30px;
@@ -240,10 +241,10 @@ body {
     /* Note page */
     .info-card {
         max-width: 600px;
-        padding: 70px;
+        padding: 20px!important;
     }
     .note-container{
-        padding: 80px;
+        padding: 60px;
     }
     .tagline-container {
         max-width: 300px;
