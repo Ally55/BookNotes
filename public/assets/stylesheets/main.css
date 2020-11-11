@@ -57,7 +57,6 @@ body {
 
 .intro-container,
 .body-container {
-    width: 1000px;
     padding-left: 7rem;
 }
 
@@ -95,6 +94,10 @@ body {
 
 .card-note-child {
     height: 100%;
+}
+
+.buttons-container {
+    height: 45px;
 }
 
 /* RESPONSIVE DESIGN for homepage */
@@ -295,6 +298,9 @@ body {
     .centered-div {
         height: 270px;
     }
+    .auth-button {
+        width: 100px;
+    }
 }
 
 @media screen and (max-width: 2700px) and (min-width: 2000px){
@@ -380,6 +386,16 @@ body {
         max-width: 100%;
     }
 
+    .intro-note,
+    .body-note{
+        font-size: 15px;
+    }
+
+    .intro-title,
+    .body-title{
+        font-size: 25px;
+    }
+
     .logo-section {
         height: 100px;
     }
@@ -393,6 +409,7 @@ body {
     h1 {
         font-size: 15px;
     }
+
 
     p {
         font-size: 10px;
