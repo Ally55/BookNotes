@@ -48,7 +48,7 @@ body {
 }
 
 .cover-container {
-    max-width: 190px;
+    max-width: 200px;
 }
 
 .note-info {
@@ -189,9 +189,9 @@ body {
         max-width: 300px;
         padding: 20px;
     }
-    .cover-container {
-        max-width: 220px;
-    }
+    /*.cover-container {*/
+    /*    max-width: 220px;*/
+    /*}*/
     .note-title {
         max-width: 80%;
         font-size: 30px;
@@ -300,6 +300,14 @@ body {
     }
     .auth-button {
         width: 100px;
+    }
+
+    .cover-container {
+        max-width: 185px;
+    }
+
+    .cover-link {
+        height: 250px;
     }
 }
 
