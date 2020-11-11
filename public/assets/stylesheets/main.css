@@ -324,10 +324,15 @@ body {
         padding: 6%;
     }
 
-    h1 {
-        font-size: 20px;
+    .intro-title,
+    .body-title {
+        font-size: 30px;
     }
 
+    .intro-note,
+    .body-note {
+        font-size: 15px;
+    }
 
     .login-title {
         font-size: 30px;
