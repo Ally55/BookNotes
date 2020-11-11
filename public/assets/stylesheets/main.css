@@ -537,7 +537,7 @@ body {
 
 .card-notes {
     min-width: 500px;
-    /*max-width: 600px;*/
+    max-width: 600px;
     /*height: 270px;*/
    /*height: fit-content;*/
 
