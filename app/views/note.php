@@ -7,7 +7,7 @@
             $query = \BookNotes\Core\Container::get('query');
                 $note = $query->getDataNoteById($noteId); ?>
 
-            <div class="col d-flex justify-content-end cover-container">
+            <div class="col d-flex justify-content-end cover-container ml-3 ml-lg-0">
                 <img src="<?php echo htmlspecialchars($note['cover_link'], ENT_QUOTES); ?>" class="cover-link">
             </div>
 
