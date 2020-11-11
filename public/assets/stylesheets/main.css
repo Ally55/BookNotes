@@ -12,7 +12,7 @@ body {
 }
 
 .container-homepage {
-    background-image: url('../images/BOOK1.jpg');
+    background-image: url('../images/Book.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,6 +24,15 @@ body {
     background-color: rgba(255,255,255,0.3);
     width: 50%;
     max-width: 50%;
+}
+
+.login-here {
+    color: black;
+}
+
+.login-here:hover {
+    color: lightgray;
+    text-decoration: none;
 }
 
 .auth-link {
@@ -268,7 +277,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) and (min-width: 800px){
+@media screen and (max-width: 1300px) and (min-width: 800px){
     .book-container {
         padding: 2rem 12rem!important;
     }
@@ -299,6 +308,7 @@ body {
     /*.cover-container {*/
     /*    max-width: 30%;*/
     /*}*/
+
 }
 
 
@@ -501,10 +511,7 @@ body {
 }
 
 .book-container {
-    /*background-color:#D3D3D3;*/
-
-    padding: 2rem 4rem;
-    /*padding: 0px 8px;*/
+    padding: 2rem 5rem;
     border-radius: 10px;
 }
 
@@ -530,7 +537,7 @@ body {
 
 .card-notes {
     min-width: 500px;
-    max-width: 600px;
+    /*max-width: 600px;*/
     /*height: 270px;*/
    /*height: fit-content;*/
 
