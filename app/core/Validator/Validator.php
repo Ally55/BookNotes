@@ -117,7 +117,7 @@ class Validator
             $this->errors[] = 'The title field should not be empty.';
         }
         if (strlen($data['title']) > 100) {
-            $this->errors = 'This title is too long. Please insert an available book title.';
+            $this->errors[] = 'This title is too long. Please insert an available book title.';
         }
         if (!preg_match('/[a-zA-Z]/',$data['title'])) {
             $this->errors[] = 'The book title must contain letters.';
@@ -127,51 +127,51 @@ class Validator
     private function validateAuthorNote($data)
     {
         if (empty($data['author'])) {
-            $errors[] = 'The author field should not be empty.';
+            $this->errors[] = 'The author field should not be empty.';
         }
         if (strlen($data['author']) > 100) {
-            $errors[] = 'The name of the author is too long.';
+            $this->errors[] = 'The name of the author is too long.';
         }
         if (!preg_match('/[a-zA-Z]/',$data['author'])) {
-            $errors[] = 'The author field must only contain letters.';
+            $this->errors[] = 'The author field must only contain letters.';
         }
     }
 
     private function validateRateNote($data)
     {
         if (empty($data['rate'])) {
-            $errors[] = 'The rate field should not be empty.';
+            $this->errors[] = 'The rate field should not be empty.';
         }
         $data['rate'] = (int) $data['rate'];
         if ($data['rate'] === 0) {
-            $errors[] = 'The rate field should be grater than 0.';
+            $this->errors[] = 'The rate field should be grater than 0.';
         }
         if ($data['rate'] > 10) {
-            $errors[] = 'The book rate should be minimum 1 and maximum 10.';
+            $this->errors[] = 'The book rate should be minimum 1 and maximum 10.';
         }
     }
 
     private function validateCoverLinkNote($data)
     {
         if (empty($data['cover_link'])) {
-            $errors[] = 'The cover link field should not be empty.';
+            $this->errors[] = 'The cover link field should not be empty.';
         }
         if (strlen($data['cover_link']) > 255) {
-            $errors[] = 'The cover link is too long.';
+            $this->errors[] = 'The cover link is too long.';
         }
     }
 
     private function validateIntroNote($data)
     {
         if (empty($data['intro'])) {
-            $errors[] = "The note's intro should not be empty.";
+            $this->errors[] = "The note's intro should not be empty.";
         }
     }
 
     private function validateBodyNote($data)
     {
         if (empty($data['body'])) {
-            $errors[] = "The note's body should not be empty.";
+            $this->errors[] = "The note's body should not be empty.";
         }
     }
 

@@ -38,13 +38,14 @@ class LibraryController extends AbstractController
             'intro' => $_POST['intro'],
             'body' => $_POST['body']
         ];
+
         $errors = $validator->validateNotes($data);
+
         $idUser = $_SESSION['user']['id'];
 
         if(count($errors) === 0) {
             $data['id_user'] = $idUser;
             $query->insertNotes($data);
-
         }
 
         if ($errors) {
