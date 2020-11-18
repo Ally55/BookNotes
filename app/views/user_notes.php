@@ -2,7 +2,7 @@
 
     <?php include(__DIR__ . "/header.php");
 
-    if (isAuthenticated()) { ?>
+    if (\BookNotes\Authentication::isAuthenticated()) { ?>
             <div class="row mt-5 no-gutters">
                 <div class="col text-center">
                     <h1 class="user-tagline"> <?php

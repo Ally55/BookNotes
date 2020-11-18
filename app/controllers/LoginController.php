@@ -6,13 +6,14 @@ namespace BookNotes\Controllers;
 use BookNotes\Controllers\AbstractController;
 use BookNotes\Core\Container;
 use BookNotes\Core\Validator\Validator;
+use BookNotes\Authentication;
 
 
 class LoginController extends AbstractController
 {
     public function index()
     {
-        if (isAuthenticated()) {
+        if (Authentication::isAuthenticated()) {
             $this->redirect('library');
         }
 
@@ -32,7 +33,7 @@ class LoginController extends AbstractController
             if (!$user) {
                 $errors[] = 'The account does not exist';
             } elseif (password_verify($_POST['password'], $user['password'])) {
-                authenticateUser($user);
+                Authentication::authenticateUser($user);
             } else {
                 $errors[] = 'Your password is incorrect';
             }
@@ -44,7 +45,7 @@ class LoginController extends AbstractController
             return $this->view('login', compact('errors'));
         }
 
-        if (isAuthenticated()) {
+        if (Authentication::isAuthenticated()) {
             $this->redirect('library');
         }
 
