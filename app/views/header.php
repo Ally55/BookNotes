@@ -1,10 +1,16 @@
+<?php
+use BookNotes\Authentication;
+
+?>
+
 <header class="row no-gutters logo-section d-flex">
     <div class="col logo-container mb-1 mb-sm-0">
         <a href="/" class="logo">BookNotes</a>
     </div>
 <?php $pathInfo = $_SERVER['PATH_INFO']; ?>
     <div class="col buttons-container d-flex align-items-center justify-content-center justify-content-md-end mb-0 mb-md-2">
-        <?php if (isAuthenticated()) { ?>
+        <?php if (Authentication::isAuthenticated()) {
+            ?>
             <a href="
             <?php
             if ($pathInfo === '/create_notes') {
@@ -31,7 +37,7 @@
 
         <p class="m-0 d-none d-sm-block">
             <?php
-            if ($pathInfo === '/login' || $pathInfo === '/library' && !isAuthenticated()) {
+              if ($pathInfo === '/login' || $pathInfo === '/library' && !Authentication::isAuthenticated()) {
                 echo 'Not a member?';
             } elseif ($pathInfo === '/library' || $pathInfo === '/create_notes' || $pathInfo === '/user_notes' || $pathInfo === '/note') {
                 echo '';
@@ -41,13 +47,13 @@
             ?>
         </p>
         <br>
-        <?php if (isAuthenticated()) { ?>
+        <?php if(Authentication::isAuthenticated()) {?>
             <form action="logout" method="post">
                 <button type="submit" class="btn btn-primary ml-2 ml-md-4 mr-2 mr-md-4 auth-button">LOG OUT</button>
             </form>
         <?php } ?>
 
-        <?php if (!isAuthenticated()) { ?>
+        <?php if(!Authentication::isAuthenticated()) {?>
         <a href="<?php if($pathInfo === '/login' || $pathInfo === '/library') {
             echo '/signup';
         } else {

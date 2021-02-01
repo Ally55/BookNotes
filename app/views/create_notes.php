@@ -1,10 +1,4 @@
-<?php
 
-//if (!isAuthenticated()) {
-//    header('Location:/library');
-//    exit;
-//}
-?>
 
 <div class="container-fluid background-div">
 
