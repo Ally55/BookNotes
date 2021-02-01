@@ -4,10 +4,11 @@ session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+require '../app/auth.php';
+require '../app/validator.php';
 
 use BookNotes\Core\Router;
 use BookNotes\Core\Container;
-
 
 if (file_exists(dirname(__DIR__) . '/.env')) {
     $dotenv = Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));

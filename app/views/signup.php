@@ -1,7 +1,8 @@
 <?php
 
+require __DIR__ . '/../flash_message.php';
 
-if (\BookNotes\Authentication::isAuthenticated()) {
+if (isAuthenticated()) {
     header('Location:/library');
     exit;
 }

@@ -1,3 +1,11 @@
+<?php
+
+//if (isAuthenticated()) {
+//    header('Location:/library');
+//    exit;
+//}
+
+?>
 
 <div class="container-fluid background-div p-0">
 
@@ -5,9 +13,7 @@
 
     <div class="row no-gutters">
         <div class="col">
-            <?php
-                \BookNotes\FlashMessage::showFlashMessage();
-            ?>
+            <?php require_once __DIR__ . '/../flash_message.php'; ?>
         </div>
     </div>
 
