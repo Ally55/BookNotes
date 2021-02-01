@@ -3,12 +3,10 @@
 
 namespace BookNotes\Controllers;
 
-use BookNotes\Authentication;
 use BookNotes\Controllers\AbstractController;
 use BookNotes\Core\Container;
 use BookNotes\Core\Database\QueryBuilder;
 use BookNotes\Core\Validator\Validator;
-
 
 class LibraryController extends AbstractController
 {
@@ -19,7 +17,7 @@ class LibraryController extends AbstractController
 
     public function createNotes()
     {
-        if (!Authentication::isAuthenticated()) {
+        if (!isAuthenticated()) {
             $this->redirect('login');
         }
         return $this->view('create_notes');
@@ -54,7 +52,7 @@ class LibraryController extends AbstractController
             return $this->view('create_notes', compact('errors'));
         }
 
-        if (!Authentication::isAuthenticated()) {
+        if (!isAuthenticated()) {
             $this->redirect('login');
         }
 
@@ -63,7 +61,7 @@ class LibraryController extends AbstractController
 
     public function userNotes()
     {
-        if (!Authentication::isAuthenticated()) {
+        if(!isAuthenticated()) {
             $this->redirect('login');
         }
 
